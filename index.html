@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Curtis Salley — Inventory &amp; Operations</title>
+<meta name="description" content="Curtis Salley: inventory manager and operations lead. Ordering, vendor coordination, stock control, team leadership, and a self-built inventory system." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f7f7f5;
+    --surface: #ffffff;
+    --ink: #14161a;
+    --ink-2: #4a4f57;
+    --muted: #6c727c;
+    --line: #e4e4df;
+    --accent: #1f6f78;
+    --accent-soft: #e5f1f2;
+    --warn: #b5482f;
+    --radius: 12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101214; --surface: #181b1f; --ink: #f2f3f5; --ink-2: #c3c7cd; --muted: #9298a1;
+      --line: #2a2e34; --accent: #5fb6be; --accent-soft: #15282b; --warn: #f08a6e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 "Inter", system-ui, sans-serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  header.top { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+  .name { font-weight: 800; letter-spacing: -0.01em; }
+  .top nav { display: flex; gap: 18px; font-weight: 500; font-size: 0.95rem; }
+  .top nav a { color: var(--ink-2); text-decoration: none; }
+  .top nav a:hover { color: var(--accent); }
+
+  .hero { padding: 56px 0 40px; }
+  .eyebrow { color: var(--accent); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 10px; }
+  h1 { font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 16px; max-width: 820px; }
+  .lede { font-size: 1.15rem; color: var(--ink-2); max-width: 720px; margin: 0 0 28px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 10px; font-weight: 600; text-decoration: none; border: 1px solid var(--line); color: var(--ink); background: var(--surface); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn:hover { filter: brightness(1.05); }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin: 8px 0 64px; }
+  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+  .stat b { display: block; font-size: 1.8rem; font-weight: 800; letter-spacing: -0.02em; }
+  .stat span { color: var(--muted); font-size: 0.9rem; }
+
+  section { padding: 0 0 64px; }
+  h2 { font-size: 1.6rem; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .intro { color: var(--ink-2); max-width: 720px; margin: 0 0 24px; }
+
+  .roles { display: grid; gap: 14px; }
+  .role { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; }
+  .role-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+  .role h3 { margin: 0; font-size: 1.1rem; }
+  .when { color: var(--muted); font-size: 0.9rem; }
+  .role ul { margin: 12px 0 0; padding-left: 20px; color: var(--ink-2); }
+  .role li { margin: 4px 0; }
+  .path { color: var(--accent); font-weight: 600; font-size: 0.92rem; margin-top: 4px; }
+
+  .feature { display: grid; grid-template-columns: 1fr 1.15fr; gap: 32px; align-items: start; }
+  .feature ul { padding-left: 20px; color: var(--ink-2); }
+  .feature li { margin: 6px 0; }
+  .shots { display: grid; gap: 12px; }
+  .shots img { width: 100%; border-radius: 10px; border: 1px solid var(--line); box-shadow: 0 8px 24px rgba(0,0,0,0.08); display: block; }
+  .caption { color: var(--muted); font-size: 0.85rem; margin: -4px 0 6px; }
+
+  .case { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 28px; }
+  .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 16px; }
+  .finding { border-left: 3px solid var(--warn); padding: 2px 0 2px 14px; }
+  .finding b { display: block; margin-bottom: 4px; }
+  .finding p { margin: 0; color: var(--ink-2); font-size: 0.95rem; }
+  .result { margin: 22px 0 0; padding: 14px 16px; background: var(--accent-soft); border-radius: 10px; color: var(--ink); }
+
+  .tags { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .tags li { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 0.92rem; color: var(--ink-2); }
+
+  .contact { background: var(--ink); color: var(--bg); border-radius: 16px; padding: 36px; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; }
+  .contact h2 { color: inherit; }
+  .contact p { margin: 0; opacity: 0.8; }
+  .contact .btn { border-color: transparent; }
+  footer { color: var(--muted); font-size: 0.85rem; padding: 24px 0 40px; }
+
+  @media (max-width: 800px) {
+    .feature { grid-template-columns: 1fr; }
+    .top nav { display: none; }
+    .hero { padding-top: 28px; }
+    .contact { padding: 26px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="name">Curtis Salley</span>
+    <nav aria-label="Sections">
+      <a href="#experience">Experience</a>
+      <a href="#stockroom">Stockroom</a>
+      <a href="#audit">Case study</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <p class="eyebrow">Inventory &amp; Operations</p>
+    <h1>I keep stock accurate, vendors on schedule, and teams running smoothly under pressure.</h1>
+    <p class="lede">Inventory manager with three years of high-volume operations experience: ordering, vendor coordination, stock rotation, and leading a 20-person team. I also built my own inventory control system, because I wanted one that catches mistakes before they reach the books.</p>
+    <div class="cta">
+      <a class="btn primary" href="resume.pdf" download>Download resume (PDF)</a>
+      <a class="btn" href="mailto:curtis.salley.cs@gmail.com">Email me</a>
+    </div>
+  </div>
+
+  <div class="stats" aria-label="At a glance">
+    <div class="stat"><b>20</b><span>person team supervised during service</span></div>
+    <div class="stat"><b>10</b><span>vendors coordinated on orders, delivery, and pricing</span></div>
+    <div class="stat"><b>400</b><span>guests a night at peak volume</span></div>
+    <div class="stat"><b>2</b><span>promotions in under three years</span></div>
+    <div class="stat"><b>4 yrs</b><span>service desk, ticketing, and training</span></div>
+  </div>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <p class="intro">Three years in fast-paced, high-volume restaurant operations, promoted from line cook to inventory manager, plus four years of service desk support and training.</p>
+    <div class="roles">
+      <div class="role">
+        <div class="role-head"><h3>Inventory Manager</h3><span class="when">High-volume restaurant · June 2023 – present</span></div>
+        <div class="path">Line Cook → Lead Line Cook → Inventory Manager</div>
+        <ul>
+          <li>Own daily inventory operations, finding and resolving stock shortages before they interrupt service</li>
+          <li>Plan and place all supply orders, matching purchasing to usage trends to control cost and keep stock accurate</li>
+          <li>Coordinate 10 vendors and suppliers on delivery schedules, order accuracy, and pricing</li>
+          <li>Run organized storage with FIFO rotation and quality standards to reduce waste and loss</li>
+          <li>Hold receiving and storage practices to consistent standards for accuracy and accountability</li>
+        </ul>
+      </div>
+      <div class="role">
+        <div class="role-head"><h3>Lead Line Cook</h3><span class="when">Same restaurant</span></div>
+        <ul>
+          <li>Supervised a 20-person team during service of up to 400 guests a night, directing staffing, workflow, and coverage in real time</li>
+          <li>Verified stock and prep readiness before every shift, with quality and safety checks</li>
+          <li>Onboarded and trained new staff, and held the team to standard operating procedures and sanitation compliance</li>
+        </ul>
+      </div>
+      <div class="role">
+        <div class="role-head"><h3>Service Desk Associate / Trainer</h3><span class="when">Creative Testing Solutions · 2018 – 2022</span></div>
+        <ul>
+          <li>Resolved high-volume customer and internal issues through a ticketing system, prioritizing to meet response-time targets</li>
+          <li>Trained new employees on procedures and workflow systems</li>
+          <li>Maintained documentation and process consistency for accurate reporting</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="stockroom">
+    <p class="eyebrow">Side project</p>
+    <h2>Stockroom: an inventory system I built</h2>
+    <div class="feature">
+      <div>
+        <p class="intro">After managing inventory in shared spreadsheets, I built the tool I wished I had. It's a working web app that runs in any browser, including on a phone in the stockroom.</p>
+        <ul>
+          <li><strong>Receiving against purchase orders:</strong> record shorts, damaged items, and the invoice cost</li>
+          <li><strong>Price checks on receipt:</strong> any cost 40% or more off the last price in the same unit is flagged before it's accepted</li>
+          <li><strong>Blind cycle counts:</strong> counters don't see the expected quantity, and every variance gets a reason (unlogged waste, receiving error, theft…)</li>
+          <li><strong>Stock log:</strong> waste, damage, transfers, and returns to vendor</li>
+          <li><strong>Monthly report:</strong> purchases by vendor, fill rate, waste, and count variance, ready to print for Finance</li>
+        </ul>
+        <div class="cta"><a class="btn primary" href="https://blkctrs-sys.github.io/stockroom/" target="_blank" rel="noopener">Try the live demo</a></div>
+      </div>
+      <div class="shots">
+        <img src="img/stockroom-receiving.png" alt="Stockroom receiving screen flagging a price that jumped 900% from the last invoice" loading="lazy" />
+        <p class="caption">Receiving catches a price typo before it reaches the books.</p>
+        <img src="img/stockroom-dashboard.png" alt="Stockroom dashboard with monthly spend by vendor, inventory value, open orders, and count accuracy" loading="lazy" />
+        <p class="caption">Dashboard: spend by vendor, inventory value, deliveries to receive, and count accuracy.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="audit">
+    <h2>Case study: auditing a month of ordering</h2>
+    <div class="case">
+      <p class="intro" style="margin:0">When I reviewed the shared spreadsheet we used to track orders and costs, I found problems that made the monthly numbers unreliable:</p>
+      <div class="case-grid">
+        <div class="finding"><b>A $5,500 typo</b><p>One delivery was entered with an extra digit ($404.85 a case instead of about $40), which overstated the month's purchasing by roughly $5,500.</p></div>
+        <div class="finding"><b>Fake price changes</b><p>The "price difference" formula showed the item's full price as a change whenever it wasn't ordered on one of the dates.</p></div>
+        <div class="finding"><b>Mixed units</b><p>Prices were compared across different units (a case vs. a single item), so real price changes were hidden and fake ones appeared.</p></div>
+        <div class="finding"><b>Missing totals</b><p>A line with a quantity and price but no total silently dropped out of the day's spending.</p></div>
+      </div>
+      <p class="result"><strong>What I did about it:</strong> worked out the fixes (compare prices only within the same unit, only when both prices exist, and flag any line missing a total), then built Stockroom so these checks happen automatically when deliveries are received, not weeks later.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="tags">
+      <li>Inventory management</li><li>Purchasing &amp; ordering</li><li>Vendor &amp; supplier coordination</li><li>Receiving &amp; stock control</li>
+      <li>FIFO rotation</li><li>Waste &amp; loss reduction</li><li>Cycle counts &amp; variance tracking</li><li>Staffing &amp; scheduling</li>
+      <li>Team leadership &amp; training</li><li>SOPs &amp; compliance</li><li>Quality assurance</li><li>Ticketing systems</li><li>Process documentation</li><li>Spreadsheets</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <h2>Let's talk</h2>
+        <p>Open to inventory, operations, purchasing, and supervisor roles in New Jersey and New York City.</p>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="mailto:curtis.salley.cs@gmail.com">curtis.salley.cs@gmail.com</a>
+        <a class="btn" href="resume.pdf" download>Resume (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Curtis Salley · Based in New Jersey</footer>
+</div>
+</body>
+</html>
